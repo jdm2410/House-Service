@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row"> 
+        <div class="col-md-10">
+        <div class="input-group mx-4">
+            <div class="input-group-prepend ">
+            </div>
+            <input type="text" class="form-control"[(ngModel)]="filteredStatus" placeholder="Quick Search">
+          </div>
+          <br>
+         </div> 
+             <div class="col-xs-12">
+                <app-service-item
+                *ngFor="let serviceEl of services | filter:filteredStatus:'name'; let i = index"
+                [service]="serviceEl"
+                [index]="i"></app-service-item>
+        
+            </div>
+     </div>
+
+</div>
