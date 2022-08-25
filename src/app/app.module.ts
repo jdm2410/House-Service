@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StarRatingModule} from 'angular-star-rating';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselModule } from 'ngx-owl-carousel-o'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -17,6 +20,10 @@ import { CareerComponent } from './career/career.component';
 import { HomeComponent } from './home/home.component';
 import { FilterPipe } from './filter.pipe';
 import { ServiceStartComponent } from './services/service-start/service-start.component';
+import { RequestComponent } from './request/request.component';
+import { ContactComponent } from './request/contact/contact.component';
+import { ContactservService } from './request/contactserv.service';
+
 
 
 @NgModule({
@@ -33,15 +40,23 @@ import { ServiceStartComponent } from './services/service-start/service-start.co
     HomeComponent,
     FilterPipe,
     ServiceStartComponent,
+    RequestComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StarRatingModule.forRoot(),
+    BrowserAnimationsModule,
+    CarouselModule
   ],
-  providers: [listServicesService],
+  providers: [
+    listServicesService,
+    ContactservService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

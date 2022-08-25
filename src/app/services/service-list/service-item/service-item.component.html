@@ -5,11 +5,12 @@ style="cursor:pointer;"
 routerLinkActive="active"
 class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
-        <h4 class="mb-1">{{ service.name }}</h4>  
+        <h4 class="mb-1">{{ service.name }}</h4>
+        <small>{{service.price}}kn</small>
     </div>
     <div class="d-flex">
         <p class="mb-1">{{ service.description }}</p>
-
+        
         <span class="ml-3">
          <img 
         [src]="service.imagePath" 
