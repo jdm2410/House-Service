@@ -11,6 +11,7 @@ import { ServiceQuickListComponent } from "./services/service-quick-list/service
 import { RequestComponent } from "./request/request.component";
 import { ContactComponent } from "./request/contact/contact.component";
 
+
 const appRoutes: Routes = [
  { path: '', redirectTo: 'home',pathMatch:"full"},
  { path: 'home', component: HomeComponent, children:[
@@ -24,8 +25,9 @@ const appRoutes: Routes = [
  { path: 'about', component: AboutComponent},
  { path: 'career', component: CareerComponent},
  { path:'request', component: RequestComponent, children: [
-   {path: '', component: ServiceQuickListComponent,outlet:'left'},
-   { path:'', component: ContactComponent,outlet:'right'},
+   { path:'', component: ContactComponent,outlet:'mid'},
+  
+
  ]}
 
 ];

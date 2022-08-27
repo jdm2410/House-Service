@@ -26,6 +26,7 @@ import { ContactservService } from './request/contactserv.service';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +43,7 @@ import { ContactservService } from './request/contactserv.service';
     ServiceStartComponent,
     RequestComponent,
     ContactComponent,
+
   ],
   imports: [
     BrowserModule,
