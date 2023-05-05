@@ -7,7 +7,7 @@ import { HttpHeaders } from '@angular/common/http'
   providedIn: 'root'
 })
 export class ContactservService {
-  private mailApi = 'https://mailthis.to/HouseService'
+  private mailApi = 'https://mailthis.to/houseservice1998@gmail.com'
 
   constructor(private http: HttpClient) { }
 

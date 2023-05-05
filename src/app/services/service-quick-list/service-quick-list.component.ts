@@ -10,12 +10,13 @@ import { listServicesService  } from '../listService.service';
 })
 export class ServiceQuickListComponent implements OnInit {
   filteredStatus = '';
-  services!: Service[];
+  services: Service[];
   constructor(private listServicesService: listServicesService,) { 
   }
 
   ngOnInit(): void {
     this.services = this.listServicesService.addService();
+    console.log(this.services);
   }
 
 }

@@ -12,7 +12,7 @@
                 <app-service-item
                 *ngFor="let serviceEl of services | filter:filteredStatus:'name'; let i = index"
                 [service]="serviceEl"
-                [index]="i"></app-service-item>
+                [index]="serviceEl.serviceId"></app-service-item>
         
             </div>
      </div>

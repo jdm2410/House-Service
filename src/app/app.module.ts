@@ -23,6 +23,8 @@ import { ServiceStartComponent } from './services/service-start/service-start.co
 import { RequestComponent } from './request/request.component';
 import { ContactComponent } from './request/contact/contact.component';
 import { ContactservService } from './request/contactserv.service';
+import { FooterComponent } from './footer/footer.component';
+import { DataStorageService } from './data-storage.service';
 
 
 
@@ -43,6 +45,7 @@ import { ContactservService } from './request/contactserv.service';
     ServiceStartComponent,
     RequestComponent,
     ContactComponent,
+    FooterComponent,
 
   ],
   imports: [
@@ -57,7 +60,8 @@ import { ContactservService } from './request/contactserv.service';
   ],
   providers: [
     listServicesService,
-    ContactservService
+    ContactservService,
+    DataStorageService
   ],
   bootstrap: [AppComponent]
 })

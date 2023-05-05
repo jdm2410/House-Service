@@ -8,7 +8,7 @@ import { ContactservService } from '../contactserv.service';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  FormData!: FormGroup;
+  FormData: FormGroup;
 
   constructor(private builder: FormBuilder, private contact: ContactservService) { }
 

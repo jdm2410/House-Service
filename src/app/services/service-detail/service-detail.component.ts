@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { listServicesService } from '../listService.service';
 import { Service } from '../service.model';
+import { DataStorageService } from 'src/app/data-storage.service';
 
 
 
@@ -12,11 +13,10 @@ import { Service } from '../service.model';
   styleUrls: ['./service-detail.component.css']
 })
 export class ServiceDetailComponent implements OnInit {
-  service!: Service;
-  id!:number;
+service: Service;
+  id: number;
 
-
-  constructor(private listService: listServicesService,
+  constructor(private dsService: DataStorageService,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -24,7 +24,7 @@ export class ServiceDetailComponent implements OnInit {
       .subscribe(
         (params: Params)=>{
           this.id = +params ['id'];
-          this.service = this.listService.getService(this.id);
+          this.service = this.dsService.getServiceById(this.id);
         }
       )
   }

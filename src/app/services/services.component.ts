@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Service } from './service.model';
 import { listServicesService } from './listService.service';
+import { DataStorageService } from '../data-storage.service';
 
 @Component({
   selector: 'app-services',
@@ -10,9 +11,13 @@ import { listServicesService } from './listService.service';
   providers: [listServicesService ]
 })
 export class ServicesComponent implements OnInit {
-  selectedService!: Service;
+  selectedService: Service;
+  services: Service[];
   
-  constructor(private listServicesService: listServicesService) { }
+  constructor(private listServicesService: listServicesService, private dataStorageService: DataStorageService) { }
+
+  
+
 
   ngOnInit(): void {
     this.listServicesService.serviceSelected
@@ -21,6 +26,7 @@ export class ServicesComponent implements OnInit {
             this.selectedService = service;
           }
         )
+
   }
 
 }

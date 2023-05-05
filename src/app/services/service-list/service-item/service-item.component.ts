@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-
 import { Service } from '../../service.model';
 
 @Component({
@@ -8,8 +7,8 @@ import { Service } from '../../service.model';
   styleUrls: ['./service-item.component.css']
 })
 export class ServiceItemComponent implements OnInit {
- @Input() service!: Service;
- @Input() index!: number;
+ @Input() service: Service;
+ @Input() index: number;
 
   ngOnInit(): void {
   }

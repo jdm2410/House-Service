@@ -1,12 +1,43 @@
 <div class="container">
-    <div class="row"> 
+    
+    <div class="row">
+        <div class="btn-group col-md-8" role="group" aria-label="Basic example" data-toggle="buttons">
+            <button
+            (click)="pickCategory='Kuhinja'"
+            class="btn btn-dark"
+            autocomplete="off"
+            >Kuhinja</button> 
+
+            <button
+            (click)="pickCategory='Sobe'"
+            class="btn btn-dark"
+            >Sobe</button>
+
+            <button
+            (click)="pickCategory='Kupatilo'"
+            class="btn btn-dark"
+            >Kupatilo</button>
+            
+            <button
+            (click)="pickCategory='Vanjski'"
+            class="btn btn-dark"
+            >Vanjski</button>
+            
+        </div>
+     
+        <div class="col-md-6"
+        *ngIf="pickCategory!=''">
+        <span class="badge badge-pill badge-warning">CATEGORY: {{pickCategory}}</span>
+        </div>
              <div class="col-xl-12">
+                <br>
                 <app-service-item
-                *ngFor="let serviceEl of services; let i = index"
+                *ngFor="let serviceEl of services | filter:pickCategory:'category'; let i = index"
                 [service]="serviceEl" 
-                [index]="i"></app-service-item>
-        
+                [index]="serviceEl.serviceId">    
+                </app-service-item>
+            
             </div>
      </div>
+</div>
 
-    </div>
