@@ -8,24 +8,17 @@ import { DataStorageService } from '../data-storage.service';
   selector: 'app-services',
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css'],
-  providers: [listServicesService ]
 })
 export class ServicesComponent implements OnInit {
-  selectedService: Service;
-  services: Service[];
+
   
-  constructor(private listServicesService: listServicesService, private dataStorageService: DataStorageService) { }
+  constructor() { }
 
   
 
 
   ngOnInit(): void {
-    this.listServicesService.serviceSelected
-        .subscribe(
-          (service: Service) =>{
-            this.selectedService = service;
-          }
-        )
+  
 
   }
 

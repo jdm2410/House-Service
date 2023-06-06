@@ -10,7 +10,7 @@ import { ServiceDetailComponent } from "./services/service-detail/service-detail
 import { ServiceQuickListComponent } from "./services/service-quick-list/service-quick-list.component";
 import { RequestComponent } from "./request/request.component";
 import { ContactComponent } from "./request/contact/contact.component";
-
+import { ServiceListComponent } from "./services/service-list/service-list.component";
 
 const appRoutes: Routes = [
  { path: '', redirectTo: 'home',pathMatch:"full"},
@@ -19,6 +19,7 @@ const appRoutes: Routes = [
  ]},
  { path: 'home/:id', redirectTo: 'services/:id', pathMatch:"full"},
  { path: 'services', component: ServicesComponent, children:[
+    
     { path: '',component: ServiceStartComponent},
     { path:':id',component:ServiceDetailComponent}
  ]},
