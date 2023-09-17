@@ -1,4 +1,4 @@
-import { Receipt } from "../request/receiptmodel.model";
+
 
 export  class Service {
    public name: string;

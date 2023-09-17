@@ -1,0 +1,79 @@
+/* Apply styles to the container div */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  /* Style the login box wrapper */
+  /* Style the login box wrapper */
+.login-box-wrapper {
+    width: 80%;
+    max-width: 370px; /* Increase the max-width to make the box wider */
+    padding: 30px; /* Increase padding for more space inside the box */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  /* Style form inputs and labels */
+  .login-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .login-form input[type="email"],
+  .login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Style the login button */
+  .login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .login-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Add some spacing and alignment */
+  .login-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Add a link for navigation to registration or other pages */
+  .login-form .form-link {
+    text-align: center;
+  }
+  
+  .login-form .form-link a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .login-form .form-link a:hover {
+    text-decoration: underline;
+  }
+  

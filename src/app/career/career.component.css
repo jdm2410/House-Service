@@ -1,0 +1,25 @@
+.career-card {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 15px 0;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.career-card h4 {
+    font-size: 20px;
+    color: #333;
+}
+
+.career-card p {
+    color: #666;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: #888;
+}

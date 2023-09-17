@@ -1,0 +1,13 @@
+{
+  "hosting": [
+    {
+      "target": "house-service",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ],
+  "functions": {
+    "source": ".",
+    "runtime": "nodejs14"
+  }
+}

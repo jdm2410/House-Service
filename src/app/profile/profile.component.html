@@ -1,0 +1,32 @@
+<div class="repairman-profile">
+  <div class="profile-header">
+    <img [src]="editMode ? editedUser.avatar : user.avatar" alt="User Avatar" class="avatar">
+    <h2>{{ editMode ? editedUser.name : user.name }}</h2>
+    <p>{{ editMode ? editedUser.profession : user.profession }}</p>
+  </div>
+  <div class="profile-details">
+    <p>Email: {{ editMode ? editedUser.email : user.email }}</p>
+    <p>Location: {{ editMode ? editedUser.location : user.location }}</p>
+    <p>About Me:</p>
+    <div *ngIf="editMode; else viewMode" class="edit-box">
+      <!-- Edit Mode -->
+      <input type="text" [(ngModel)]="editedUser.location" placeholder="Location">
+      <input type="text" [(ngModel)]="editedUser.profession" placeholder="Profession">
+      <textarea [(ngModel)]="editedUser.bio" rows="5"></textarea>
+      <input type="file" (change)="onFileSelected($event)" accept="image/*">
+      <button class="save-button" (click)="saveChanges()">Save</button>
+    </div>
+    <ng-template #viewMode>
+      <!-- View Mode -->
+      <p>{{ editMode ? editedUser.bio : user.bio }}</p>
+    </ng-template>
+  </div>
+
+  <button (click)="toggleEditMode()">{{ editMode ? 'Save' : 'Edit' }}</button>
+</div>
+<div class="availability">
+  <h3>Availability:</h3>
+</div>
+<div class="calendar-container">
+  <div #calendar></div>
+</div>

@@ -11,6 +11,10 @@ import { ServiceQuickListComponent } from "./services/service-quick-list/service
 import { RequestComponent } from "./request/request.component";
 import { ContactComponent } from "./request/contact/contact.component";
 import { ServiceListComponent } from "./services/service-list/service-list.component";
+import { ProfileComponent } from "./profile/profile.component";
+import { UserProfileComponent } from "./user-profile/user-profile.component";
+import { LoginComponent } from "./login/login.component";
+import { RegisterComponent } from "./register/register.component";
 
 const appRoutes: Routes = [
  { path: '', redirectTo: 'home',pathMatch:"full"},
@@ -27,9 +31,11 @@ const appRoutes: Routes = [
  { path: 'career', component: CareerComponent},
  { path:'request', component: RequestComponent, children: [
    { path:'', component: ContactComponent,outlet:'mid'},
-  
-
- ]}
+ ]},
+  { path:'profile',component:ProfileComponent},
+  { path:'user-profile', component:UserProfileComponent},
+  { path: 'login', component: LoginComponent },
+  { path:'register', component:RegisterComponent}
 
 ];
 
