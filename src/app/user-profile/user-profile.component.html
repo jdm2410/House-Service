@@ -1,0 +1,45 @@
+<div class="user-profile">
+  <div class="profile-header">
+    <img [src]="user.avatar" alt="User Avatar" class="avatar">
+    <h2>{{ user.name }}</h2>
+  </div>
+  <div class="profile-details">
+    <h3>User Information</h3>
+    <form *ngIf="editMode" (ngSubmit)="saveChanges()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="editedUser.name" required>
+      </div>
+    
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" [(ngModel)]="editedUser.location">
+      </div>
+      <div class="form-group">
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" [(ngModel)]="editedUser.bio"></textarea>
+      </div>
+      <div class="button-group">
+        <button class="btn save-button" type="submit">Save</button>
+        <button class="btn cancel-button" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </form>
+    <div *ngIf="!editMode">
+      <div class="info-item">
+        <strong>Name:</strong> {{ user.name }}
+      </div>
+      <div class="info-item">
+        <strong>Email:</strong> {{ user.email }}
+      </div>
+      <div class="info-item">
+        <strong>Location:</strong> {{ user.location }}
+      </div>
+      <div class="info-item">
+        <strong>Bio:</strong> {{ user.bio }}
+      </div>
+    </div>
+  </div>
+  <div class="profile-actions">
+    <button class="btn edit-button" *ngIf="!editMode" (click)="toggleEditMode()">Edit Profile</button>
+  </div>
+</div>

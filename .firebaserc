@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ng-house-service": {
+      "hosting": {
+        "house-service": [
+          "ng-house-service"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ng-house-service"
+  }
+}

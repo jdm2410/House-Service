@@ -1,0 +1,23 @@
+<!-- accept-work-request.component.html -->
+<div class="work-request">
+    <h3>Work Request</h3>
+    <p><strong>Date:</strong> {{ workRequest.date }}</p>
+    <p><strong>Description:</strong> {{ workRequest.description }}</p>
+  
+    <div *ngIf="!accepted" class="action-buttons">
+      <button (click)="acceptRequest()" class="accept-button">Accept</button>
+      <button (click)="declineRequest()" class="decline-button">Decline</button>
+    </div>
+  
+    <div *ngIf="accepted" class="accepted-message">
+      <p><em>Work request accepted. The worker is now scheduled for this day.</em></p>
+    </div>
+  </div>
+  <h2>Work Requests</h2>
+<ul>
+  <li *ngFor="let request of workRequests">
+    <!-- Display work request properties here -->
+    <p>Date: {{ request.date }}</p>
+    <p>Description: {{ request.description }}</p>
+  </li>
+</ul>

@@ -1,7 +1,70 @@
-.active{
-    color:rgb(63, 247, 146);
+/* Header Styles */
+.navbar {
+  background-color: #3f9764; /* Grayish-Green Background Color */
+  border: none;
 }
 
-a {
-    color : white;
+.navbar-toggler-icon {
+  background-color: #fff; /* White Hamburger Icon */
+}
+
+.navbar-toggler-icon:focus {
+  outline: none;
+}
+
+.nav-link {
+  font-size: 18px;
+  color: #fff; /* White Text Color */
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: rgb(63, 247, 146); /* Gold Color on Hover */
+}
+
+.nav-link.active {
+  font-weight: bold;
+}
+
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+  color: #fff; /* White Text Color */
+  font-size: 24px;
+}
+
+/* User Info Styles */
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-name {
+  color: #fff; /* White Text Color */
+  margin-right: 10px;
+}
+
+.logout-button {
+  background-color: red; /* Gold Logout Button */
+  color: white; /* Grayish-Green Text Color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.logout-button:hover {
+  background-color: rgb(93, 5, 5); /* Gold Color on Hover */
+  color: white; /* Grayish-Green Text Color on Hover */
+}
+
+/* Authentication Links Styles */
+.auth-link {
+  font-size: 18px;
+  color: white; /* Gold Authentication Links Color */
+  margin: 0 10px;
+}
+
+.auth-link:hover {
+  color: rgb(63, 247, 146); /* White Text Color on Hover */
 }

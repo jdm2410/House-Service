@@ -25,6 +25,18 @@ import { ContactComponent } from './request/contact/contact.component';
 import { ContactservService } from './request/contactserv.service';
 import { FooterComponent } from './footer/footer.component';
 import { DataStorageService } from './data-storage.service';
+import { ProfileComponent } from './profile/profile.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat'; 
+import { environment } from './firebase-config';
+import { UserService } from './user.service';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AcceptWorkRequestComponent } from './accept-work-request/accept-work-request.component';
+
 
 
 
@@ -46,6 +58,12 @@ import { DataStorageService } from './data-storage.service';
     RequestComponent,
     ContactComponent,
     FooterComponent,
+    ProfileComponent,
+    UserProfileComponent,
+    LoginComponent,
+    RegisterComponent,
+    AcceptWorkRequestComponent
+    
 
   ],
   imports: [
@@ -56,13 +74,20 @@ import { DataStorageService } from './data-storage.service';
     AppRoutingModule,
     StarRatingModule.forRoot(),
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
+    
   ],
   providers: [
     listServicesService,
     ContactservService,
-    DataStorageService
+    DataStorageService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+}

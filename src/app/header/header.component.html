@@ -1,60 +1,60 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
-
-    <div class="container-fluid"> 
-     
-      <div class="navbar-header mr-5"> 
-          <ul class="nav mx-auto">
-            <li class="nav-item">
-              <button class="navbar-toggler" type="button" (click)="collapsed = !collapsed">
-               <span class="navbar-toggler-icon" ></span>
-              </button>
-            </li>
-            <li class="nav-item">
-            <a routerLink="/home">
-              <img src="../assets/images/home.png" alt="logo" height="100" width="150">
-             </a></li>
-          </ul> 
-      </div>
-   
-      <div  class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
-        <ul class="nav ml-4">
-            <li class="nav-item" >
-                <a
-                routerLink="/services"
-                routerLinkActive="active"
-                class="nav-link" 
-                style="font-size:25px;">Service</a>
-            </li>
-            <li class="nav-item">
-                <a 
-                class="nav-link" 
-                routerLinkActive="active"
-                routerLink="/about"
-                style="font-size:25px;">About Us</a>
-            </li>
-            <li class="nav-item">
-                <a 
-                class="nav-link" 
-                routerLinkActive="active"
-                routerLink="/career" 
-                style="font-size:25px;">Career</a>
-            </li>
-        </ul>
-       
-      </div>
-      <ul class="nav mx-5">
-        <li style="font-size:35px; color: rgb(63, 247, 146); font-style: oblique;">0800-444-SERVICE</li>
-     </ul>
-   
-
-     <ul class="nav ml-auto"> 
-       
-       <a routerLink = "/request" >
-         <button class="btn btn-danger btn-lg">
-           REQUEST SERVICE
-         </button>
-       </a>
-     </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="navbar-header mr-5">
+      <ul class="nav mx-auto">
+        <li class="nav-item">
+          <button class="navbar-toggler" type="button" (click)="collapsed = !collapsed">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/home">
+            <img src="../assets/images/home.png" alt="logo" height="100" width="150">
+          </a>
+        </li>
+      </ul>
     </div>
-  </nav>
-  
+
+    <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
+      <ul class="nav ml-4">
+        <li class="nav-item">
+          <a routerLink="/services" routerLinkActive="active" class="nav-link" style="font-size: 25px;">Service</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/about" style="font-size: 25px;">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/career" style="font-size: 25px;">Career</a>
+        </li>
+        <li class="nav-item" *ngIf="userRole === 'worker'">
+          <a style="font-size: 25px;"  routerLink="/profile" class="nav-link">Profile</a>
+        </li>
+        <li class="nav-item" *ngIf="userRole === 'customer'">
+          <a style="font-size: 25px;" routerLink="/user-profile" class="nav-link">User Profile</a>
+        </li>
+        <li class="nav-item" *ngIf="userRole === 'customer'">
+          <a style="font-size: 25px;" routerLink="/request" class="nav-link">Request service</a>
+        </li>
+      </ul>
+    </div>
+
+    <ul class="nav mx-5">
+      <li style="font-size: 35px; color: rgb(63, 247, 146); font-style: oblique;">0800-444-SERVICE</li>
+    </ul>
+
+    <ul class="nav ml-auto">
+      <li class="nav-item" *ngIf="isLoggedIn">
+        <div class="user-info">
+          <span class="user-name">{{ userName }}</span>
+          <button class="logout-button" (click)="logout()">Logout</button>
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="!isLoggedIn">
+        <a routerLink="/login" class="nav-link auth-link">Login</a>
+      </li>
+      <li class="nav-item" *ngIf="!isLoggedIn">
+        <a routerLink="/register" class="nav-link auth-link">Register</a>
+      </li>
+    </ul>
+  </div>
+</nav>
