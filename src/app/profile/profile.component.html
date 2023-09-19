@@ -1,32 +1,70 @@
-<div class="repairman-profile">
-  <div class="profile-header">
-    <img [src]="editMode ? editedUser.avatar : user.avatar" alt="User Avatar" class="avatar">
-    <h2>{{ editMode ? editedUser.name : user.name }}</h2>
-    <p>{{ editMode ? editedUser.profession : user.profession }}</p>
-  </div>
-  <div class="profile-details">
-    <p>Email: {{ editMode ? editedUser.email : user.email }}</p>
-    <p>Location: {{ editMode ? editedUser.location : user.location }}</p>
-    <p>About Me:</p>
-    <div *ngIf="editMode; else viewMode" class="edit-box">
-      <!-- Edit Mode -->
-      <input type="text" [(ngModel)]="editedUser.location" placeholder="Location">
-      <input type="text" [(ngModel)]="editedUser.profession" placeholder="Profession">
-      <textarea [(ngModel)]="editedUser.bio" rows="5"></textarea>
-      <input type="file" (change)="onFileSelected($event)" accept="image/*">
-      <button class="save-button" (click)="saveChanges()">Save</button>
+<div class="profile-section">
+  <div class="repairman-profile">
+    <div class="profile-header">
+      <img [src]="user.avatar" alt="User Avatar" class="avatar" />
+      <h1>{{ editMode ? editedUser.name : user.name }}</h1>
+      <p>{{ editMode ? editedUser.profession : user.profession }}</p>
     </div>
-    <ng-template #viewMode>
-      <!-- View Mode -->
-      <p>{{ editMode ? editedUser.bio : user.bio }}</p>
-    </ng-template>
+    <div class="profile-details">
+      <p>Email: {{ editMode ? editedUser.email : user.email }}</p>
+      <p>Location: {{ editMode ? editedUser.location : user.location }}</p>
+      <p>About Me:</p>
+      <div *ngIf="editMode; else viewMode" class="edit-box">
+        <!-- Edit Mode -->
+        <input
+          type="text"
+          [(ngModel)]="editedUser.location"
+          placeholder="Location"
+        />
+        <input
+          type="text"
+          [(ngModel)]="editedUser.profession"
+          placeholder="Profession"
+        />
+        <textarea [(ngModel)]="editedUser.bio" rows="5"></textarea>
+        <button class="save-button" (click)="saveChanges()">
+          Save Changes
+        </button>
+      </div>
+      <ng-template #viewMode>
+        <!-- View Mode -->
+        <p>{{ editMode ? editedUser.bio : user.bio }}</p>
+      </ng-template>
+    </div>
+    <button (click)="toggleEditMode()">
+      {{ editMode ? "Cancel" : "Edit Profile" }}
+    </button>
+  </div>
+</div>
+
+<div *ngFor="let request of selectedWorkRequest" class="work-request">
+  <h3>Work Request</h3>
+  <p><strong>Date:</strong> {{ request.date }}</p>
+  <p><strong>Description:</strong> {{ request.description }}</p>
+
+  <div *ngIf="!accepted" class="request-actions">
+    <button (click)="acceptRequest(request)" class="accept-button">
+      Accept
+    </button>
+    <button
+      (click)="workService.removeWorkRequest(request.id)"
+      class="decline-button"
+    >
+      Decline
+    </button>
   </div>
 
-  <button (click)="toggleEditMode()">{{ editMode ? 'Save' : 'Edit' }}</button>
+  <div *ngIf="accepted" class="accepted-message">
+    <p>
+      <em>Work request accepted. The worker is now scheduled for this day.</em>
+    </p>
+  </div>
 </div>
+
 <div class="availability">
-  <h3>Availability:</h3>
+  <h2>Availability:</h2>
 </div>
+
 <div class="calendar-container">
   <div #calendar></div>
 </div>

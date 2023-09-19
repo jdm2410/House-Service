@@ -1,9 +1,53 @@
-<div class="row">
-    <div class="col-md-4">
-    </div>
-    <div class="col-md-4">
-        <router-outlet name='mid'></router-outlet>
-    </div>
-    <div class="col-md-4">
-    </div>
+<div class="request-container">
+  <h2>Request Work</h2>
+
+  <!-- Date input field -->
+  <div class="form-group">
+    <label for="selectedDate">Select a Date:</label>
+    <input
+      type="date"
+      id="selectedDate"
+      [(ngModel)]="selectedDate"
+      name="selectedDate"
+      required
+    />
+  </div>
+
+  <!-- List of available workers -->
+  <div class="worker-list">
+    <h3>Available Workers:</h3>
+    <ul>
+      <li *ngFor="let worker of availableWorkers" class="worker-item">
+        <!-- Display worker information -->
+        <div class="worker-info">
+          <div class="worker-name">{{ worker.name }}</div>
+          <div class="worker-email">{{ worker.email }}</div>
+        </div>
+        <!-- Checkbox to select the worker -->
+        <div class="worker-selection">
+          <input
+            type="checkbox"
+            [(ngModel)]="worker.selected"
+            [disabled]="!isWorkerAvailable(worker)"
+            (change)="selectWorker(worker)"
+          />
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Description input field -->
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea
+      id="description"
+      [(ngModel)]="description"
+      name="description"
+      rows="4"
+      required
+    ></textarea>
+  </div>
+
+  <!-- Submit button -->
+  <button type="button" (click)="createWorkRequest()">Request Work</button>
 </div>

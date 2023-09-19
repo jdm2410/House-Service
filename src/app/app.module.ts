@@ -33,8 +33,9 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat'; 
 import { environment } from './firebase-config';
 import { UserService } from './user.service';
-
-
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AcceptWorkRequestComponent } from './accept-work-request/accept-work-request.component';
 
 
 
@@ -60,7 +61,8 @@ import { UserService } from './user.service';
     ProfileComponent,
     UserProfileComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AcceptWorkRequestComponent
     
 
   ],
@@ -74,7 +76,10 @@ import { UserService } from './user.service';
     BrowserAnimationsModule,
     CarouselModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
+    
   ],
   providers: [
     listServicesService,

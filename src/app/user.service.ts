@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { WorkRequest } from './request/work-request.model';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,8 @@ export class UserService {
     role: string,
     userDescription: string,
     userAvatar: string,
-    workerSchedule: Record<string, string> // You can customize this type
+    workerSchedule: Record<string, string>,
+    request: WorkRequest // You can customize this type
   ) {
     // Generate a unique key for the user
     const userKey = this.db.createPushId();
@@ -28,6 +30,7 @@ export class UserService {
       userDescription,
       userAvatar,
       workerSchedule,
+      request
     };
 
     // Set the user data under the unique key

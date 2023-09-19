@@ -94,3 +94,56 @@
 .save-button:hover {
   background-color: #0056b3;
 }
+
+/* Styling for Work Request Cards */
+.work-request {
+  display: inline-block;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 10px 0;
+  width: auto; /* Set to auto to adjust card width based on content */
+  max-width: 100%; /* Ensure card does not exceed its container */
+  box-sizing: border-box; /* Include padding and borders in width */
+}
+
+.work-request h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.work-request p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.work-request strong {
+  font-weight: bold;
+}
+
+.accepted-message {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.work-request button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.work-request button:hover {
+  background-color: #0056b3;
+}

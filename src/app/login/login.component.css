@@ -76,4 +76,8 @@
   .login-form .form-link a:hover {
     text-decoration: underline;
   }
+  .form-error {
+    color: red; /* Set the color of the error message to red */
+    margin-top: 10px; /* Add some space between the input fields and the error message */
+  }
   
